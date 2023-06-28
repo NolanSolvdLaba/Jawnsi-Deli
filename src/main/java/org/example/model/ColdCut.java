@@ -1,5 +1,7 @@
 package org.example.model;
 
 public class ColdCut extends Food {
-    // Additional properties or methods specific to cold cut meats
+    public ColdCut(String name, double price) {
+        super(name, price);
+    }
 }

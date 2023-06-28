@@ -1,5 +1,7 @@
 package org.example.model;
 
 public class Sandwich extends Food {
-    // Sandwich implementation
+    public Sandwich(String name, double price) {
+        super(name, price);
+    }
 }

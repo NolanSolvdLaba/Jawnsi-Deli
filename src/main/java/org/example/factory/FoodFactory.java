@@ -1,10 +1,10 @@
 package org.example.factory;
 
-import com.example.model.Food;
+import org.example.model.Food;
 
-public abstract class FoodFactory {
-    public abstract Food createSandwich();
-    public abstract Food createSalad();
-    public abstract Food createColdCut();
-    public abstract Food createDessert();
+public interface FoodFactory {
+    Food createSandwich();
+    Food createSalad();
+    Food createColdCut();
+    Food createDessert();
 }
