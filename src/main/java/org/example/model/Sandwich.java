@@ -1,4 +1,5 @@
 package org.example.model;
 
-public class Sandwich {
+public class Sandwich extends Food {
+    // Sandwich implementation
 }
