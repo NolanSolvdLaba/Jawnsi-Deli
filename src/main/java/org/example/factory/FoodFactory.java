@@ -1,4 +1,4 @@
-package com.example.dao;
+package org.example.factory;
 
 import com.example.model.Food;
 
