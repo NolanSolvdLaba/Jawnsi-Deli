@@ -1,0 +1,21 @@
+<!-- DessertMapper.xml -->
+<mapper namespace="com.example.dao.DessertMapper">
+
+    <!-- SQL statements for Dessert -->
+    <select id="getDessertById" parameterType="int" resultType="Dessert">
+        SELECT * FROM dessert WHERE id = #{id}
+    </select>
+
+    <insert id="insertDessert" parameterType="Dessert" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO dessert (name, price, type) VALUES (#{name}, #{price}, #{type})
+    </insert>
+
+    <update id="updateDessert" parameterType="Dessert">
+        UPDATE dessert SET name = #{name}, price = #{price}, type = #{type} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteDessert" parameterType="int">
+        DELETE FROM dessert WHERE id = #{id}
+    </delete>
+
+</mapper>

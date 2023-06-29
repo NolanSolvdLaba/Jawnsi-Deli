@@ -1,0 +1,21 @@
+<!-- VeganSandwichMapper.xml -->
+<mapper namespace="com.example.dao.VeganSandwichMapper">
+
+    <!-- SQL statements for VeganSandwich -->
+    <select id="getVeganSandwichById" parameterType="int" resultType="VeganSandwich">
+        SELECT * FROM vegan_sandwich WHERE id = #{id}
+    </select>
+
+    <insert id="insertVeganSandwich" parameterType="VeganSandwich" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO vegan_sandwich (name, price, meat_substitute_type) VALUES (#{name}, #{price}, #{meatSubstituteType})
+    </insert>
+
+    <update id="updateVeganSandwich" parameterType="VeganSandwich">
+        UPDATE vegan_sandwich SET name = #{name}, price = #{price}, meat_substitute_type = #{meatSubstituteType} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteVeganSandwich" parameterType="int">
+        DELETE FROM vegan_sandwich WHERE id = #{id}
+    </delete>
+
+</mapper>

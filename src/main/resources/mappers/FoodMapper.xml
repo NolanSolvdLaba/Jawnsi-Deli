@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.FoodDao">
+
+    <!-- Insert statement -->
+    <insert id="insertFood" parameterType="Food">
+        INSERT INTO foods (name, price) VALUES (#{name}, #{price})
+    </insert>
+
+    <!-- Update statement -->
+    <update id="updateFood" parameterType="Food">
+        UPDATE foods SET name = #{name}, price = #{price} WHERE id = #{id}
+    </update>
+
+    <!-- Delete statement -->
+    <delete id="deleteFood" parameterType="int">
+        DELETE FROM foods WHERE id = #{id}
+    </delete>
+
+    <!-- Select statement -->
+    <select id="getFoodById" resultType="Food">
+        SELECT * FROM foods WHERE id = #{id}
+    </select>
+
+    <!-- Add more statements as needed -->
+
+</mapper>

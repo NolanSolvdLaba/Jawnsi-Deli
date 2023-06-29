@@ -1,0 +1,21 @@
+<!-- MeatSandwichMapper.xml -->
+<mapper namespace="com.example.dao.MeatSandwichMapper">
+
+    <!-- SQL statements for MeatSandwich -->
+    <select id="getMeatSandwichById" parameterType="int" resultType="MeatSandwich">
+        SELECT * FROM meat_sandwich WHERE id = #{id}
+    </select>
+
+    <insert id="insertMeatSandwich" parameterType="MeatSandwich" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO meat_sandwich (name, price, meat_type) VALUES (#{name}, #{price}, #{meatType})
+    </insert>
+
+    <update id="updateMeatSandwich" parameterType="MeatSandwich">
+        UPDATE meat_sandwich SET name = #{name}, price = #{price}, meat_type = #{meatType} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteMeatSandwich" parameterType="int">
+        DELETE FROM meat_sandwich WHERE id = #{id}
+    </delete>
+
+</mapper>

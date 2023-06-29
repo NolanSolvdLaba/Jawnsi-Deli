@@ -1,0 +1,21 @@
+<!-- SaladMapper.xml -->
+<mapper namespace="com.example.dao.SaladMapper">
+
+    <!-- SQL statements for Salad -->
+    <select id="getSaladById" parameterType="int" resultType="Salad">
+        SELECT * FROM salad WHERE id = #{id}
+    </select>
+
+    <insert id="insertSalad" parameterType="Salad" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO salad (name, price, dressing) VALUES (#{name}, #{price}, #{dressing})
+    </insert>
+
+    <update id="updateSalad" parameterType="Salad">
+        UPDATE salad SET name = #{name}, price = #{price}, dressing = #{dressing} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteSalad" parameterType="int">
+        DELETE FROM salad WHERE id = #{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,21 @@
+<!-- SandwichMapper.xml -->
+<mapper namespace="com.example.dao.SandwichMapper">
+
+    <!-- SQL statements for Sandwich -->
+    <select id="getSandwichById" parameterType="int" resultType="Sandwich">
+        SELECT * FROM sandwich WHERE id = #{id}
+    </select>
+
+    <insert id="insertSandwich" parameterType="Sandwich" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO sandwich (name, price, is_vegan) VALUES (#{name}, #{price}, #{isVegan})
+    </insert>
+
+    <update id="updateSandwich" parameterType="Sandwich">
+        UPDATE sandwich SET name = #{name}, price = #{price}, is_vegan = #{isVegan} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteSandwich" parameterType="int">
+        DELETE FROM sandwich WHERE id = #{id}
+    </delete>
+
+</mapper>

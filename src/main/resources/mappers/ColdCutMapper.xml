@@ -1,0 +1,21 @@
+<!-- ColdCutMapper.xml -->
+<mapper namespace="com.example.dao.ColdCutMapper">
+
+    <!-- SQL statements for ColdCut -->
+    <select id="getColdCutById" parameterType="int" resultType="ColdCut">
+        SELECT * FROM cold_cut WHERE id = #{id}
+    </select>
+
+    <insert id="insertColdCut" parameterType="ColdCut" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO cold_cut (name, price) VALUES (#{name}, #{price})
+    </insert>
+
+    <update id="updateColdCut" parameterType="ColdCut">
+        UPDATE cold_cut SET name = #{name}, price = #{price} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteColdCut" parameterType="int">
+        DELETE FROM cold_cut WHERE id = #{id}
+    </delete>
+
+</mapper>
